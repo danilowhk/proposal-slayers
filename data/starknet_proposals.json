@@ -1,0 +1,9 @@
+{
+	"space": { "id": "starknet.eth" },
+	"proposals": [
+		{ "id": "0xe3666dcfaecdd871bbad1c2f882861d2bb0a26eb27aeab36679c498f2a1c86c2" },
+		{ "id": "0x7364c48ce0ae82d96b78381ac9d5ca3304d58ffc0fb84400ed3019ad00e3e53c" },
+		{ "id": "0x00889bc468509610e516e8602f00b21ca8c32466dd4f0140eca38becb7f40bef" },
+		{ "id": "0x9d535e2a14cbe1f34ce3732ca765becd3eccc103fde784ca23f071de276f3f92" }
+	]
+}
