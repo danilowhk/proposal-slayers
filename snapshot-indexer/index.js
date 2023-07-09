@@ -187,6 +187,7 @@ async function getUserVotes(user) {
               created
               proposal {
                 id
+                title
               }
               space {
                 id
@@ -297,13 +298,13 @@ async function start() {
 	// fs.writeFileSync("delegates_follows.json", JSON.stringify(delegate_follows));
 	//
 	// // fetch all votes the user has made
-	// const delegates = JSON.parse(fs.readFileSync("delegates.json", "utf-8"));
+	// const delegates = JSON.parse(fs.readFileSync("starknet_delegates.json", "utf-8"));
 	// const delegates_votes = await getUserVotes(delegates.delegates.slice(100, 130));
 	// fs.writeFileSync("delegates_votes1.json", JSON.stringify(delegates_votes));
-
-	const delegates = JSON.parse(fs.readFileSync("delegates.json", "utf-8"));
-	const delegates_profile = await getUserProfile(delegates.delegates.slice(100, 130));
-	fs.writeFileSync("delegates_profile1.json", JSON.stringify(delegates_profile));
+	//
+	// const delegates = JSON.parse(fs.readFileSync("delegates.json", "utf-8"));
+	// const delegates_profile = await getUserProfile(delegates.delegates.slice(100, 130));
+	// fs.writeFileSync("delegates_profile1.json", JSON.stringify(delegates_profile));
 }
 
 start();
