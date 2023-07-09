@@ -3,6 +3,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { ChakraProvider } from "@chakra-ui/react";
+import { Spinner } from "@chakra-ui/react";
 
 interface Inputs {
 	question1: string;
@@ -34,16 +36,18 @@ export default function Home() {
 	const [inputs, setInputs] = useState<Inputs | null>(null);
 
 	return (
-		<main className="flex  min-h-screen flex-col items-center justify-between bg-red-300 text-black">
-			{stage === Stage.Question && (
-				<Question
-					setInputs={setInputs}
-					finishStage={() => setStage(Stage.Answer)}
-				/>
-			)}
+		<ChakraProvider>
+			<main className="flex min-h-screen flex-col items-center justify-between bg-white text-black">
+				{stage === Stage.Question && (
+					<Question
+						setInputs={setInputs}
+						finishStage={() => setStage(Stage.Answer)}
+					/>
+				)}
 
-			{stage === Stage.Answer && inputs && <Answer inputs={inputs} />}
-		</main>
+				{stage === Stage.Answer && inputs && <Answer inputs={inputs} />}
+			</main>
+		</ChakraProvider>
 	);
 }
 
@@ -53,14 +57,13 @@ function useFetchAnswer(inputs: Inputs) {
 	const [error, setError] = useState<any>(null);
 
 	useEffect(() => {
-		setLoading(true);
-
+		// setLoading(true);
 		// do request here
-		axios
-			.post("/api/answer", {} as any)
-			.then((res) => setData(res.data))
-			.catch((e) => setError(e))
-			.finally(() => setLoading(false));
+		// axios
+		// 	.post("/api/answer", {} as any)
+		// 	.then((res) => setData(res.data))
+		// 	.catch((e) => setError(e))
+		// 	.finally(() => setLoading(false));
 	}, []);
 
 	return {
@@ -73,7 +76,11 @@ function useFetchAnswer(inputs: Inputs) {
 function Answer({ inputs }: { inputs: Inputs }) {
 	const { data, error, loading } = useFetchAnswer(inputs);
 
-	return <div>{loading && <div>Loading...</div>}</div>;
+	return (
+		<div className="flex-col flex w-full flex-1 items-center justify-center">
+			{!loading && <Spinner size="xl" />}
+		</div>
+	);
 }
 
 function Question({
@@ -86,12 +93,7 @@ function Question({
 	const [state, setState] = useState<QuestionState>(QuestionState.Question1);
 	const [buttonText, setButtonText] = useState<string>("Next");
 
-	const {
-		register,
-		handleSubmit,
-		watch,
-		formState: { errors },
-	} = useForm<Inputs>();
+	const { register, handleSubmit } = useForm<Inputs>();
 
 	useEffect(() => {
 		if (state === QuestionState.Question7) {
@@ -111,61 +113,82 @@ function Question({
 	return (
 		<form
 			onSubmit={handleSubmit(onSubmit)}
-			className="flex-col flex w-full flex-1 bg-yellow-300 items-center justify-center px-36"
+			className="flex-col flex w-full flex-1 items-center justify-center px-96 text-gray-700"
 		>
 			{state === QuestionState.Question1 && (
-				<div className="flex flex-col w-full">
+				<div className="flex flex-col w-full gap-7">
 					<div className="text-center">Question 1</div>
-					<input className="h-14 rounded-lg" {...register("question1")} />
+					<input
+						className="h-14 rounded-lg p-5 border border-gray-200"
+						{...register("question1")}
+					/>
 				</div>
 			)}
 
 			{state === QuestionState.Question2 && (
-				<div className="flex flex-col w-full">
+				<div className="flex flex-col w-full gap-7">
 					<div className="text-center">Question 2</div>
-					<input className="h-14 rounded-lg" {...register("question2")} />
+					<input
+						className="h-14 rounded-lg p-5 border border-gray-200"
+						{...register("question2")}
+					/>
 				</div>
 			)}
 
 			{state === QuestionState.Question3 && (
-				<div className="flex flex-col w-full">
+				<div className="flex flex-col w-full gap-7">
 					<div className="text-center">Question 3</div>
-					<input className="h-14 rounded-lg" {...register("question3")} />
+					<input
+						className="h-14 rounded-lg p-5 border border-gray-200"
+						{...register("question3")}
+					/>
 				</div>
 			)}
 
 			{state === QuestionState.Question4 && (
-				<div className="flex flex-col w-full">
+				<div className="flex flex-col w-full gap-7">
 					<div className="text-center">Question 4</div>
-					<input className="h-14 rounded-lg" {...register("question4")} />
+					<input
+						className="h-14 rounded-lg p-5 border border-gray-200"
+						{...register("question4")}
+					/>
 				</div>
 			)}
 
 			{state === QuestionState.Question5 && (
-				<div className="flex flex-col w-full">
+				<div className="flex flex-col w-full gap-7">
 					<div className="text-center">Question 5</div>
-					<input className="h-14 rounded-lg" {...register("question5")} />
+					<input
+						className="h-14 rounded-lg p-5 border border-gray-200"
+						{...register("question5")}
+					/>
 				</div>
 			)}
 
 			{state === QuestionState.Question6 && (
-				<div className="flex flex-col w-full">
+				<div className="flex flex-col w-full gap-7">
 					<div className="text-center">Question 6</div>
-					<input className="h-14 rounded-lg" {...register("question6")} />
+					<input
+						className="h-14 rounded-lg p-5 border border-gray-200"
+						{...register("question6")}
+					/>
 				</div>
 			)}
 
 			{state === QuestionState.Question7 && (
-				<div className="flex flex-col w-full">
+				<div className="flex flex-col w-full gap-7">
 					<div className="text-center">Question 7</div>
-					<input className="h-14 rounded-lg" {...register("question7")} />
+					<input
+						className="h-14 rounded-lg p-5 border border-gray-200"
+						{...register("question7")}
+					/>
 				</div>
 			)}
 
 			<input
 				type="submit"
 				value={buttonText}
-				className="cursor-pointer h-12 w-full bg-red-500 rounded-lg mt-4 font-bold"
+				className="cursor-pointer h-12 w-full rounded-lg mt-4 font-bold bg-white text-pink-400 outline outline-[2px] outline-pink-400 hover:outline-none hover:bg-pink-400 hover:text-white transition-colors duration-300"
 			/>
 		</form>
 	);
