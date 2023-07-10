@@ -15,7 +15,7 @@ class ChatGPT:
         with open(filepath, 'a', encoding='utf-8') as outfile:
             outfile.write(content)
 
-    def chat(self, user_input, temperature=0, frequency_penalty=0.2, presence_penalty=0, max_turns=10):
+    def chat(self, user_input, temperature=1, frequency_penalty=0.2, presence_penalty=0, max_turns=10):
         self.short_term_memory.append({"role": "user","content": user_input})
 
         # Only use the last max_turns turns of the short_term_memory

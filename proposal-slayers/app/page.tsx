@@ -117,7 +117,7 @@ function Question({
 		>
 			{state === QuestionState.Question1 && (
 				<div className="flex flex-col w-full gap-7">
-					<div className="text-center">Question 1</div>
+					<div className="text-center">Do you prefer a delegate with extensive blockchain and DAO experience, or are you open to supporting emerging leaders?</div>
 					<input
 						className="h-14 rounded-lg p-5 border border-gray-200"
 						{...register("question1")}
@@ -127,7 +127,7 @@ function Question({
 
 			{state === QuestionState.Question2 && (
 				<div className="flex flex-col w-full gap-7">
-					<div className="text-center">Question 2</div>
+					<div className="text-center">What delegate expertise do you value the most? (e.g., smart contract development, legal, finance, governance, marketing)</div>
 					<input
 						className="h-14 rounded-lg p-5 border border-gray-200"
 						{...register("question2")}
@@ -137,7 +137,7 @@ function Question({
 
 			{state === QuestionState.Question3 && (
 				<div className="flex flex-col w-full gap-7">
-					<div className="text-center">Question 3</div>
+					<div className="text-center">Which types of proposals are you most interested in? Are there specific issues you want your delegate to support?</div>
 					<input
 						className="h-14 rounded-lg p-5 border border-gray-200"
 						{...register("question3")}
@@ -147,7 +147,7 @@ function Question({
 
 			{state === QuestionState.Question4 && (
 				<div className="flex flex-col w-full gap-7">
-					<div className="text-center">Question 4</div>
+					<div className="text-center">Do you prefer a highly active delegate or one who is more strategic with their involvement?</div>
 					<input
 						className="h-14 rounded-lg p-5 border border-gray-200"
 						{...register("question4")}
@@ -157,7 +157,7 @@ function Question({
 
 			{state === QuestionState.Question5 && (
 				<div className="flex flex-col w-full gap-7">
-					<div className="text-center">Question 5</div>
+					<div className="text-center">How much do you rely on a delegates reputation or feedback from other DAO members when choosing your delegate?</div>
 					<input
 						className="h-14 rounded-lg p-5 border border-gray-200"
 						{...register("question5")}
@@ -167,7 +167,7 @@ function Question({
 
 			{state === QuestionState.Question6 && (
 				<div className="flex flex-col w-full gap-7">
-					<div className="text-center">Question 6</div>
+					<div className="text-center">What are your core values and DAO objectives? Which values should your chosen delegate champion? (e.g., decentralization, inclusivity, transparency)</div>
 					<input
 						className="h-14 rounded-lg p-5 border border-gray-200"
 						{...register("question6")}
@@ -177,7 +177,7 @@ function Question({
 
 			{state === QuestionState.Question7 && (
 				<div className="flex flex-col w-full gap-7">
-					<div className="text-center">Question 7</div>
+					<div className="text-center">Do you prefer delegates from a certain location or timezone?</div>
 					<input
 						className="h-14 rounded-lg p-5 border border-gray-200"
 						{...register("question7")}
