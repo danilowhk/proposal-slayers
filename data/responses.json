@@ -1,0 +1,11 @@
+{
+    "0xBEC643BD5b7F5e9190617CA4187ef0455950C51C": {
+        "name": "classify_delegate",
+        "arguments": "{\n    \"delegate_info\": \"The delegate follows several DAOs including Uniswap, Arbitrum Foundation, Op Collective, dYdX Governance, and Starknet. They have voted on multiple proposals across these DAOs, with a particular focus on Starknet and Arbitrum Foundation. The proposals they have supported range from technical upgrades (Starknet Alpha v0.12.0), grants allocation (Arbitrum DAO Grants - Delegated Domain Allocation by Questbook), support for account abstraction endpoint (Proposal: Activate support for account abstraction endpoint on One and Nova), launching of subDAOs (Launch dYdX Operations subDAO V2), to governance and treasury related matters (AIP 1.05: Return 700M $ARB to the DAO Treasury, AIP-1.2 - Foundation and DAO Governance, AIP-1.1 - Lockup, Budget, Transparency).\"\n}"
+    },
+    "0x60F71959f4f14e2222eaAB14C83f414d4b4Bd1a8": "",
+    "0xa0841146d646688EAaF3A0803FFc12C3A9E5434b": {
+        "name": "classify_delegate",
+        "arguments": "{ \n\"delegate_info\": \"The delegate, known as 0xAsten, follows Starknet DAO. They have voted on multiple proposals related to Starknet, with a focus on technical upgrades such as Starknet Alpha v0.12.0 and Starknet Alpha v0.11.0. They have also participated in test votes for these upgrades.\"\n}"
+    }
+}
